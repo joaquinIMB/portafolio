@@ -12,45 +12,75 @@ export const translations = {
       paragraph2: "Juntos podemos trasladar tus ideas a un proyecto real",
       buttonContact: "Hablemos",
     },
-    services: {
-      service1: {
+    services: [
+      {
+        id: "service1",
         name: "Desarrollo Web",
         paragraph1:
           "Creo aplicaciones y CRMs con interfaces modernas, intuitivas y optimizadas para brindar la mejor experiencia de usuario.",
       },
-      service2: {
+      {
+        id: "service2",
         name: "Automatización con API's",
         paragraph1:
           "Desarrollo APIs que optimizan procesos, integrando datos de manera eficiente con servicios externos y bases de datos.",
       },
-      service3: {
+      {
+        id: "service3",
         name: "Optimización de rendimiento",
         paragraph1:
           "Analizo tu sitio web con herramientas avanzadas, mejorando métricas clave como velocidad de carga y puntuación en Lighthouse.",
       },
-      service4: {
+      {
+        id: "service4",
         name: "Soporte y Mantenimiento",
         paragraph1:
           "Brindo asistencia técnica continua, resolviendo errores y garantizando el óptimo rendimiento de tu plataforma.",
       },
-    },
-    projects: {
-      project1: {
+    ],
+    projects: [
+      {
+        id: "project1",
         title: "ReCon",
-        description: "Aplicación web CRUD para gestión financiera",
+        description: "Plataforma de gestión financiera personal",
         paragraph1:
-          "Registra tus gastos diarios y obtén un balance mensual con estadísticas detalladas y gráficos de tendencias.",
+          "Aplicación web para administrar finanzas personales. Permite registrar gastos, visualizar estadísticas y consultar gráficos intuitivos que brindan una visión clara de la salud financiera del usuario.",
         technologies: "React, Firebase, Context API",
+        image: "/recon.jpg",
+        link: "https://app-registro-gastos.web.app/iniciar-sesion",
       },
-      project2: {
-        title: "HelpDesk Unity",
-        description: "CRM personalizado para Punto Deportivo",
+      {
+        id: "project3",
+        title: "Portafolio Next.js",
+        description: "Portafolio web moderno para desarrolladores",
         paragraph1:
-          "Sistema de tickets interno con reportes detallados, automatización de tareas y notificaciones en tiempo real.",
+          "Portafolio personal dinámico y responsivo diseñado para mostrar proyectos y habilidades con animaciones elegantes utilizando GSAP y Tailwind CSS. Construido para ser escalable, performante y visualmente atractivo.",
+        technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
+        image: "/portafolio.jpg",
+        link: "https://portafolio-joaquin-exequiel.vercel.app/",
+      },
+      {
+        id: "project2",
+        title: "HelpDesk Unity",
+        description: "CRM interno para gestión de soporte técnico",
+        paragraph1:
+          "Sistema de tickets personalizado para Punto Deportivo, que permite al equipo registrar, actualizar y resolver tickets de soporte eficientemente. Incluye notificaciones en tiempo real, gestión de roles de usuario y paneles administrativos.",
         technologies:
           "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+        image: "/helpDesk.jpg",
+        link: "https://github.com/joaquinIMB/sistema-tickets",
       },
-    },
+      {
+        id: "project4",
+        title: "Portafolio CODERHOUSE",
+        description: "Proyecto final del curso de Desarrollo Web en CODERHOUSE",
+        paragraph1:
+          "Sitio de portafolio estático creado como proyecto integrador para demostrar las habilidades adquiridas durante el curso. Incluye diseño responsivo, componentes estilizados con SCSS y organización clara de contenidos personales y profesionales.",
+        technologies: "HTML, CSS, SCSS",
+        image: "/portafolioCoder.jpg",
+        link: "https://proyectofinaljoaquinimbriago.netlify.app/",
+      },
+    ],
     contactMeSection: {
       state: "Disponible",
       title: "Iniciemos un proyecto juntos",
@@ -67,6 +97,19 @@ export const translations = {
       inputForm5: "Mensaje",
       textInputForm5: "Cuéntame sobre tu proyecto, y como puedo ayudarte",
     },
+    metadata: [
+      {
+        page: "Contacto",
+        title: "Portafolio Joaquin | Contacto",
+        description:
+          "Ponte en contacto para discutir sobre proyectos de desarrollo.",
+      },
+      {
+        page: "Proyectos",
+        title: "Portafolio Joaquin | Proyectos",
+        description: "Observá los últimos proyectos que realicé.",
+      },
+    ],
   },
   en: {
     navBar: {
@@ -81,45 +124,75 @@ export const translations = {
       paragraph2: "Together we can turn your ideas into a real project",
       buttonContact: "Get in touch",
     },
-    services: {
-      service1: {
+    services: [
+      {
+        id: "service1",
         title: "Web Development",
         paragraph1:
           "I create applications and CRMs with modern, intuitive, and optimized interfaces to provide the best user experience.",
       },
-      service2: {
+      {
+        id: "service2",
         title: "API Automation",
         paragraph1:
           "I develop APIs that optimize processes, efficiently integrating data with external services and databases.",
       },
-      service3: {
+      {
+        id: "service3",
         title: "Performance Optimization",
         paragraph1:
           "I analyze your website using advanced tools, improving key metrics such as loading speed and Lighthouse scores.",
       },
-      service4: {
+      {
+        id: "service4",
         title: "Support & Maintenance",
         paragraph1:
           "I provide continuous technical assistance, resolving errors and ensuring optimal performance of your platform.",
       },
-    },
-    projects: {
-      project1: {
+    ],
+    projects: [
+      {
+        id: "project1",
         title: "ReCon",
-        description: "CRUD web application for financial management",
+        description: "Personal finance management platform",
         paragraph1:
-          "Track your daily expenses and get a monthly balance with detailed statistics and trend graphs.",
+          "A web application for managing personal finances. Users can track expenses, review statistics, and visualize data through intuitive graphs and charts, offering a clear view of their financial health.",
         technologies: "React, Firebase, Context API",
+        image: "/recon.jpg",
+        link: "https://app-registro-gastos.web.app/iniciar-sesion",
       },
-      project2: {
-        title: "HelpDesk Unity",
-        description: "Custom CRM for Punto Deportivo",
+      {
+        id: "project3",
+        title: "Next.js Portfolio",
+        description: "Modern web developer portfolio",
         paragraph1:
-          "Internal ticketing system with detailed reports, task automation, and real-time notifications.",
+          "A dynamic and responsive personal portfolio designed to showcase projects and skills with elegant animations using GSAP and Tailwind CSS. Built to be scalable and performant with a strong aesthetic focus.",
+        technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
+        image: "/portafolio.jpg",
+        link: "https://portafolio-joaquin-exequiel.vercel.app/",
+      },
+      {
+        id: "project2",
+        title: "HelpDesk Unity",
+        description: "Internal CRM for managing technical support",
+        paragraph1:
+          "A customized internal ticketing system for Punto Deportivo, allowing staff to register, update, and resolve support tickets efficiently. Includes real-time notifications, user role management, and administrative dashboards.",
         technologies:
           "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+        image: "/helpDesk.jpg",
+        link: "https://github.com/joaquinIMB/sistema-tickets",
       },
-    },
+      {
+        id: "project4",
+        title: "CODERHOUSE Portfolio",
+        description: "Final project for the Web Developer course at CODERHOUSE",
+        paragraph1:
+          "A static portfolio site built as a capstone project to demonstrate skills acquired during the course. It includes responsive layouts, styled components with SCSS, and clear organization of personal and professional projects.",
+        technologies: "HTML, CSS, SCSS",
+        image: "/portafolioCoder.jpg",
+        link: "https://proyectofinaljoaquinimbriago.netlify.app/",
+      },
+    ],
     contactMeSection: {
       state: "Available",
       title: "Let's Start a Project Together",
@@ -136,5 +209,17 @@ export const translations = {
       inputForm5: "Message",
       textInputForm5: "Tell me about your project and how I can help you",
     },
+    metadata: [
+      {
+        page: "Contact",
+        title: "Portfolio Joaquin | Contact",
+        description: "Get in touch to discuss development projects.",
+      },
+      {
+        page: "Projects",
+        title: "Portfolio Joaquin | Projects",
+        description: "Check out the latest projects I've done.",
+      },
+    ],
   },
 };
