@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
-import { Code, Zap, BarChart3, Wrench, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Code, Zap, BarChart3, Wrench, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -36,43 +35,45 @@ const services = [
     icon: Wrench,
     color: "from-blue-500 to-purple-500",
   },
-]
+];
 
 const Services = () => {
-
-
   return (
-    <section className="relative py-20 px-12 max-sm:px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
-      <div className="relative z-10 container mx-auto px-4 max-sm:px-0">
-        <div className="max-w-4xl mx-auto mb-4">
+    <section
+      id="services"
+      className="relative pt-20 pb-10 px-12 max-sm:px-4 max-sm:pb-4 overflow-hidden"
+    >
+      <div className="relative max-w-6xl z-10 container mx-auto max-sm:px-0">
+        <div className="max-w-4xl mx-auto mb-6">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-cyan-500/50"></div>
-            <span className="text-cyan-400 text-lg font-mono tracking-wider px-4">{"<Servicios />"}</span>
+            <span className="text-cyan-400 text-lg font-mono tracking-wider px-4">
+              {"<Servicios />"}
+            </span>
             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-purple-500/50"></div>
           </div>
-          <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-6 tracking-tight text-center">
+          <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-2 tracking-tight text-center">
             Mis{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
               Servicios
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto text-center">
-            Soluciones digitales personalizadas para potenciar tu presencia online y optimizar tus procesos.
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto text-center">
+            Soluciones digitales personalizadas para potenciar tu presencia
+            online y optimizar tus procesos.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service) => {
-            const Icon = service.icon
+            const Icon = service.icon;
             return (
               <div
                 key={service.id}
-                className={`service-card group relative p-1 rounded-2xl transition-all duration-500 translate-y-10`}
-               
+                className={`service-card group relative p-1 rounded-2xl transition-all duration-500 `}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-800 to-transparent rounded-2xl opacity-50"></div>
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl group-hover:opacity-20 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-[19px] group-hover:opacity-20 transition-opacity duration-500`}
                 ></div>
 
                 <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 h-full overflow-hidden group-hover:border-gray-700 transition-colors duration-300">
@@ -87,26 +88,21 @@ const Services = () => {
                       <Icon className="w-7 h-7 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
-                    <p className="text-gray-400 mb-6 flex-grow">{service.paragraph1}</p>
-                    <Link
-                      href="#"
-                      className="group inline-flex items-center text-sm font-medium text-cyan-400 hover:text-white transition-colors"
-                    >
-                      <span>Saber más</span>
-                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-400 mb-6 flex-grow">
+                      {service.paragraph1}
+                    </p>
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-12 h-12 border-t border-l border-gray-700 rounded-tl-xl opacity-30"></div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
-
+export default Services;
