@@ -40,7 +40,7 @@ const NavBar = () => {
         {navLinks.map((item) => (
           <Link
             key={item.id}
-            href={`http://localhost:3000/${item.href}`}
+            href={`https://portafolio-joaquin-exequiel.vercel.app/${item.href}`}
             className="text-gray-300 hover:text-white transition-colors duration-300"
             onClick={() => setShowMenu(false)}
           >
