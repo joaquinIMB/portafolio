@@ -50,6 +50,17 @@ export const translations = {
         link: "https://app-registro-gastos.web.app/iniciar-sesion",
       },
       {
+        id: "project2",
+        title: "HelpDesk Unity",
+        description: "CRM interno para gestión de soporte técnico",
+        paragraph1:
+          "Sistema de tickets personalizado para Punto Deportivo, que permite al equipo registrar, actualizar y resolver tickets de soporte eficientemente. Incluye notificaciones en tiempo real, gestión de roles de usuario y paneles administrativos.",
+        technologies:
+          "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+        image: "/helpdesk.jpg",
+        link: "https://github.com/joaquinIMB/sistema-tickets",
+      },
+      {
         id: "project3",
         title: "Portafolio Next.js",
         description: "Portafolio web moderno para desarrolladores",
@@ -58,17 +69,6 @@ export const translations = {
         technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
         image: "/portafolio.jpg",
         link: "https://portafolio-joaquin-exequiel.vercel.app/",
-      },
-      {
-        id: "project2",
-        title: "HelpDesk Unity",
-        description: "CRM interno para gestión de soporte técnico",
-        paragraph1:
-          "Sistema de tickets personalizado para Punto Deportivo, que permite al equipo registrar, actualizar y resolver tickets de soporte eficientemente. Incluye notificaciones en tiempo real, gestión de roles de usuario y paneles administrativos.",
-        technologies:
-          "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
-        image: "/helpDesk.jpg",
-        link: "https://github.com/joaquinIMB/sistema-tickets",
       },
       {
         id: "project4",
@@ -162,6 +162,17 @@ export const translations = {
         link: "https://app-registro-gastos.web.app/iniciar-sesion",
       },
       {
+        id: "project2",
+        title: "HelpDesk Unity",
+        description: "Internal CRM for managing technical support",
+        paragraph1:
+          "A customized internal ticketing system for Punto Deportivo, allowing staff to register, update, and resolve support tickets efficiently. Includes real-time notifications, user role management, and administrative dashboards.",
+        technologies:
+          "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+        image: "/helpdesk.jpg",
+        link: "https://github.com/joaquinIMB/sistema-tickets",
+      },
+      {
         id: "project3",
         title: "Next.js Portfolio",
         description: "Modern web developer portfolio",
@@ -170,17 +181,6 @@ export const translations = {
         technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
         image: "/portafolio.jpg",
         link: "https://portafolio-joaquin-exequiel.vercel.app/",
-      },
-      {
-        id: "project2",
-        title: "HelpDesk Unity",
-        description: "Internal CRM for managing technical support",
-        paragraph1:
-          "A customized internal ticketing system for Punto Deportivo, allowing staff to register, update, and resolve support tickets efficiently. Includes real-time notifications, user role management, and administrative dashboards.",
-        technologies:
-          "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
-        image: "/helpDesk.jpg",
-        link: "https://github.com/joaquinIMB/sistema-tickets",
       },
       {
         id: "project4",
