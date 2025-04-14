@@ -1,7 +1,8 @@
-Portafolio de Joaquin Imbriago (WIP)
-Joaquin Imbriago Portfolio (Work in Progress)
+<h1>Portafolio de Joaquin Imbriago (WIP) | Joaquin Imbriago Portfolio (Work in Progress)</h1>
+<br/>
+<h2>Español</h2>
+<br/>
 
-Es
 Este repositorio contiene el portafolio personal de Joaquin Imbriago, el cual aún se encuentra en desarrollo.
 
 Descripción
@@ -41,7 +42,10 @@ Estado del Proyecto
 (Proyecto en proceso – Work in Progress)
 Este README es provisional, ya que mi portafolio aún está en desarrollo y se irán agregando nuevas funcionalidades y mejoras en breve.
 
-En
+<br/>
+<h2>English</h2>
+<br/>
+
 This repository contains the personal portfolio of Joaquin Imbriago, which is still under development.
 
 Description
