@@ -1,43 +1,9 @@
-"use client";
-
-import { Code, Zap, BarChart3, Wrench, ArrowRight } from "lucide-react";
-
-const services = [
-  {
-    id: "service1",
-    name: "Desarrollo Web",
-    paragraph1:
-      "Creo aplicaciones y CRMs con interfaces modernas, intuitivas y optimizadas para brindar la mejor experiencia de usuario.",
-    icon: Code,
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    id: "service2",
-    name: "Automatización con API's",
-    paragraph1:
-      "Desarrollo APIs que optimizan procesos, integrando datos de manera eficiente con servicios externos y bases de datos.",
-    icon: Zap,
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    id: "service3",
-    name: "Optimización de rendimiento",
-    paragraph1:
-      "Analizo tu sitio web con herramientas avanzadas, mejorando métricas clave como velocidad de carga y puntuación en Lighthouse.",
-    icon: BarChart3,
-    color: "from-cyan-500 to-purple-500",
-  },
-  {
-    id: "service4",
-    name: "Soporte y Mantenimiento",
-    paragraph1:
-      "Brindo asistencia técnica continua, resolviendo errores y garantizando el óptimo rendimiento de tu plataforma.",
-    icon: Wrench,
-    color: "from-blue-500 to-purple-500",
-  },
-];
+import { translations } from "@/utils/translations";
 
 const Services = () => {
+
+  const { servicesSection } = translations.es;
+
   return (
     <section
       id="services"
@@ -45,7 +11,7 @@ const Services = () => {
     >
       <div className="relative max-w-6xl z-10 container mx-auto max-sm:px-0">
         <div className="max-w-4xl mx-auto mb-6">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-4 max-md:mb-0">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-cyan-500/50"></div>
             <span className="text-cyan-400 text-lg font-mono tracking-wider px-4">
               {"<Servicios />"}
@@ -53,18 +19,17 @@ const Services = () => {
             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-purple-500/50"></div>
           </div>
           <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-2 tracking-tight text-center">
-            Mis{" "}
+            {servicesSection.title}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
-              Servicios
+              {servicesSection.span}
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto text-center">
-            Soluciones digitales personalizadas para potenciar tu presencia
-            online y optimizar tus procesos.
+            {servicesSection.paragraph1}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service) => {
+          {servicesSection.services.map((service) => {
             const Icon = service.icon;
             return (
               <div

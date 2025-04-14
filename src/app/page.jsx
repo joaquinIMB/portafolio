@@ -11,7 +11,6 @@ export default function Home() {
       <Services />
       <Projects />
       <ContactMe />
-      <Footer />
     </>
   );
 }

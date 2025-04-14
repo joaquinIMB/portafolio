@@ -1,7 +1,7 @@
 "use client";
 
 import { navLinks, socialMedia } from "@/utils/info";
-import { Github, Linkedin, Mail, Code, ArrowUp } from "lucide-react";
+import { Code, ArrowUp } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -46,31 +46,6 @@ const Footer = () => {
                   </Link>
                 );
               })}
-              {/* <a
-                href="https://github.com/joaquinIMB"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-10 h-10 flex items-center justify-center rounded-full overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300"></div>
-                <Github className="relative z-10 w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/joaquin-imbriago/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-10 h-10 flex items-center justify-center rounded-full overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300"></div>
-                <Linkedin className="relative z-10 w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="#"
-                className="group relative w-10 h-10 flex items-center justify-center rounded-full overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300"></div>
-                <Mail className="relative z-10 w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
-              </a> */}
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8">

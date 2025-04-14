@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Code, AlignJustify, X } from "lucide-react";
 import { useState } from "react";
-import { navLinks } from "@/utils/info";
+import { translations } from "@/utils/translations";
 import { socialMedia } from "@/utils/info";
 
 const NavBar = () => {
@@ -12,6 +12,13 @@ const NavBar = () => {
   const handleClickMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const { navLinks } = translations.es.navBar;
+
+  const envioronmentLink =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/"
+      : "https://portafolio-joaquin-exequiel.vercel.app/";
 
   return (
     <header
@@ -40,7 +47,7 @@ const NavBar = () => {
         {navLinks.map((item) => (
           <Link
             key={item.id}
-            href={`https://portafolio-joaquin-exequiel.vercel.app/${item.href}`}
+            href={envioronmentLink + item.href} 
             className="text-gray-300 hover:text-white transition-colors duration-300"
             onClick={() => setShowMenu(false)}
           >
