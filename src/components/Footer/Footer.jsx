@@ -3,8 +3,12 @@
 import { navLinks, socialMedia } from "@/utils/info";
 import { Code, ArrowUp } from "lucide-react";
 import Link from "next/link";
+import { translations } from "@/utils/translations";
 
 const Footer = () => {
+
+  const {footerSection} = translations.es;
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -23,12 +27,11 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Code className="text-cyan-400 w-6 h-6" />
               <span className="text-white font-bold text-xl">
-                Joaquin Imbriago
+                {footerSection.title}
               </span>
             </div>
             <p className="text-gray-400 max-w-xs">
-              Desarrollador FullStack especializado en crear experiencias
-              digitales modernas y atractivas.
+              {footerSection.paragraph1}
             </p>
             <div className="flex space-x-4 pt-2">
               {socialMedia.map((item) => {
@@ -87,7 +90,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-white font-semibold">Suscríbete</h3>
             <p className="text-gray-400">
-              Recibe actualizaciones sobre mis nuevos proyectos y artículos.
+              {footerSection.paragraph2}
             </p>
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
@@ -106,8 +109,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Joaquin Imbriago. Todos los derechos
-            reservados.
+            © {new Date().getFullYear()}{" "}{footerSection.copyright}
           </p>
           <div className="flex items-center gap-6">
             <button

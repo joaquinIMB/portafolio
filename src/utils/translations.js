@@ -134,6 +134,12 @@ export const translations = {
       paragraph1:
         "Hagamos realidad tu próxima página web con un diseño moderno y funcionalidades excepcionales.",
     },
+    footerSection:{
+      title: "Joaquin Imbriago",
+      paragraph1:"Desarrollador FullStack especializado en crear experiencias digitales modernas y atractivas.",
+      paragraph2:"Recibe actualizaciones sobre mis nuevos proyectos y artículos.",
+      copyright:"Joaquin Imbriago. Todos los derechos reservados.",
+    },
     metadata: {
       page: "Inicio",
       title: "Portafolio Joaquin",
@@ -270,6 +276,12 @@ export const translations = {
       paragraph1:
         "Let's make your next website a reality with a modern design and exceptional features.",
     },
+    footerSection: {
+      title: "Joaquin Imbriago",
+      paragraph1: "Full-stack Developer specialized in creating modern and engaging digital experiences.",
+      paragraph2: "Receive updates about my new projects and articles.",
+      copyright: "Joaquin Imbriago. All rights reserved."
+  },
     metadata: {
       page: "Home",
       title: "Portfolio Joaquin",
