@@ -2,7 +2,7 @@ import { useLanguageStore } from "@/app/store";
 import { Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const ButtonLanguage = () => {
+const ButtonLanguage = ({ showMenu }) => {
   const [showLanguage, setShowLanguage] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const { language, setLanguage } = useLanguageStore();
@@ -48,7 +48,13 @@ const ButtonLanguage = () => {
       </button>
 
       {showLanguage && (
-        <div className="absolute right-0 mt-2 w-28 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-50">
+        <div
+          className={`absolute right-0 w-28 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-50 ${
+            showMenu
+              ? "bottom-full mb-2 origin-bottom-right"
+              : "mt-2 origin-top-right"
+          }`}
+        >
           <div className="py-2 px-2 flex flex-col text-center text-sm text-gray-700">
             <button
               onClick={() => selectLanguage("es")}

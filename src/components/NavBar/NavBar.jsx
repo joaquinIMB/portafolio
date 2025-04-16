@@ -47,7 +47,7 @@ const NavBar = () => {
 
   const handleCloseMenu = (e) => {
     if (e.target.closest("a")) return;
-
+    if (e.target.closest("button")) return;
     setShowMenu(false);
   };
 
@@ -85,6 +85,7 @@ const NavBar = () => {
         {navLinks.map((item) => (
           <Link
             key={item.id}
+            name={item.id}
             href={envioronmentLink + item.href}
             className="text-gray-300 hover:text-white max-md:text-gray-50 transition-colors duration-300 w-fit"
             onClick={() => setShowMenu(false)}
@@ -93,13 +94,14 @@ const NavBar = () => {
           </Link>
         ))}
         <div className="hidden gap-4 items-center max-md:justify-center fixed bottom-0 right-0 pb-4 px-4 max-md:flex">
-          <ButtonLanguage />
+          <ButtonLanguage showMenu={showMenu} />
           {socialMedia.map((SM) => {
             const SocialIcon = SM.icon;
             return (
               <Link
                 key={SM.id}
                 href={SM.href}
+                name={SM.id}
                 className="text-gray-50 hover:text-white transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
