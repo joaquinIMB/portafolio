@@ -2,30 +2,28 @@ import { Code, Zap, BarChart3, Wrench } from "lucide-react";
 
 export const translations = {
   es: {
-    navBar: {
-      navLinks: [
-        {
-          id: 1,
-          title: "Inicio",
-          href: "#home",
-        },
-        {
-          id: 2,
-          title: "Servicios",
-          href: `#services`,
-        },
-        {
-          id: 3,
-          title: "Proyectos",
-          href: `#projects`,
-        },
-        {
-          id: 4,
-          title: "Contacto",
-          href: "#contact",
-        },
-      ],
-    },
+    navLinks: [
+      {
+        id: 1,
+        title: "Inicio",
+        href: "#home",
+      },
+      {
+        id: 2,
+        title: "Servicios",
+        href: `#services`,
+      },
+      {
+        id: 3,
+        title: "Proyectos",
+        href: `#projects`,
+      },
+      {
+        id: 4,
+        title: "Contacto",
+        href: "#contact",
+      },
+    ],
     mainPage: {
       title: "Hola! Soy",
       span: "Joaco",
@@ -35,6 +33,7 @@ export const translations = {
       buttonContact2: "Sobre mí",
     },
     servicesSection: {
+      spanPresentation: "Servicios",
       title: "Mis",
       span: "servicios",
       paragraph1:
@@ -75,6 +74,7 @@ export const translations = {
       ],
     },
     projectsSection: {
+      spanPresentation: "Proyectos",
       title: "Mis",
       span: "proyectos",
       paragraph1:
@@ -89,7 +89,7 @@ export const translations = {
           technologies: "React, Firebase, Context API",
           image: "/recon.jpg",
           linkDemo: "https://app-registro-gastos.web.app/iniciar-sesion",
-          linkRepo:"https://github.com/joaquinIMB/Re-Con-Gastos"
+          linkRepo: "https://github.com/joaquinIMB/Re-Con-Gastos",
         },
         {
           id: "project2",
@@ -101,7 +101,7 @@ export const translations = {
             "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
           image: "/helpdesk.jpg",
           linkDemo: "https://sistema-tickets-punto.vercel.app",
-          linkRepo:"https://github.com/joaquinIMB/sistema-tickets"
+          linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
         },
         {
           id: "project3",
@@ -112,7 +112,7 @@ export const translations = {
           technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
           image: "/portafolio.jpg",
           linkDemo: "https://portafolio-joaquin-exequiel.vercel.app/",
-          linkRepo:"https://github.com/joaquinIMB/portafolio"
+          linkRepo: "https://github.com/joaquinIMB/portafolio",
         },
         {
           id: "project4",
@@ -124,21 +124,27 @@ export const translations = {
           technologies: "HTML, CSS, SCSS",
           image: "/portafolioCoder.jpg",
           linkDemo: "https://proyectofinaljoaquinimbriago.netlify.app/",
-          linkRepo:"https://github.com/joaquinIMB/Portafolio-CODERHOUSE"
+          linkRepo: "https://github.com/joaquinIMB/Portafolio-CODERHOUSE",
         },
       ],
     },
     contactMeSection: {
+      spanPresentation: "Contactame",
       title: "Hablemos de tu",
       span: "proyecto",
       paragraph1:
         "Hagamos realidad tu próxima página web con un diseño moderno y funcionalidades excepcionales.",
     },
-    footerSection:{
+    footerSection: {
       title: "Joaquin Imbriago",
-      paragraph1:"Desarrollador FullStack especializado en crear experiencias digitales modernas y atractivas.",
-      paragraph2:"Recibe actualizaciones sobre mis nuevos proyectos y artículos.",
-      copyright:"Joaquin Imbriago. Todos los derechos reservados.",
+      title2:"Navegación",
+      title3:"Contacto",
+      title4:"Suscríbete",
+      paragraph1:
+        "Desarrollador FullStack especializado en crear experiencias digitales modernas y atractivas.",
+      paragraph2:
+        "Recibe actualizaciones sobre mis nuevos proyectos y artículos.",
+      copyright: "Joaquin Imbriago. Todos los derechos reservados.",
     },
     metadata: {
       page: "Inicio",
@@ -148,30 +154,28 @@ export const translations = {
     },
   },
   en: {
-    navBar: {
-      navLinks: [
-        {
-          id: 1,
-          title: "Home",
-          href: "#home",
-        },
-        {
-          id: 2,
-          title: "Services",
-          href: `#services`,
-        },
-        {
-          id: 3,
-          title: "Projects",
-          href: `#projects`,
-        },
-        {
-          id: 4,
-          title: "Contact",
-          href: "#contact",
-        },
-      ],
-    },
+    navLinks: [
+      {
+        id: 1,
+        title: "Home",
+        href: "#home",
+      },
+      {
+        id: 2,
+        title: "Services",
+        href: `#services`,
+      },
+      {
+        id: 3,
+        title: "Projects",
+        href: `#projects`,
+      },
+      {
+        id: 4,
+        title: "Contact",
+        href: "#contact",
+      },
+    ],
     mainPage: {
       title: "Hi, I'm",
       span: "Joaco!",
@@ -181,6 +185,7 @@ export const translations = {
       buttonContact2: "About me",
     },
     servicesSection: {
+      spanPresentation: "Services",
       title: "My",
       span: "services",
       paragraph1:
@@ -188,7 +193,7 @@ export const translations = {
       services: [
         {
           id: "service1",
-          title: "Web Development",
+          name: "Web Development",
           paragraph1:
             "I create applications and CRMs with modern, intuitive, and optimized interfaces to provide the best user experience.",
           icon: Code,
@@ -196,35 +201,35 @@ export const translations = {
         },
         {
           id: "service2",
-          title: "API Automation",
+          name: "API Automation",
           paragraph1:
             "I develop APIs that optimize processes, efficiently integrating data with external services and databases.",
           icon: Zap,
-          color: "from-cyan-500 to-blue-500",
+          color: "from-purple-500 to-pink-500",
         },
         {
           id: "service3",
-          title: "Performance Optimization",
+          name: "Performance Optimization",
           paragraph1:
             "I analyze your website using advanced tools, improving key metrics such as loading speed and Lighthouse scores.",
           icon: BarChart3,
-          color: "from-cyan-500 to-blue-500",
+          color: "from-cyan-500 to-purple-500",
         },
         {
           id: "service4",
-          title: "Support & Maintenance",
+          name: "Support & Maintenance",
           paragraph1:
             "I provide continuous technical assistance, resolving errors and ensuring optimal performance of your platform.",
           icon: Wrench,
-          color: "from-cyan-500 to-blue-500",
+          color: "from-blue-500 to-purple-500",
         },
       ],
     },
     projectsSection: {
+      spanPresentation: "Projects",
       title: "My",
       span: "projects",
-      paragraph1:
-        "Explore some of my recent work in web development.",
+      paragraph1: "Explore some of my recent work in web development.",
       projects: [
         {
           id: "project1",
@@ -234,7 +239,8 @@ export const translations = {
             "A web application for managing personal finances. Users can track expenses, review statistics, and visualize data through intuitive graphs and charts, offering a clear view of their financial health.",
           technologies: "React, Firebase, Context API",
           image: "/recon.jpg",
-          link: "https://app-registro-gastos.web.app/iniciar-sesion",
+          linkDemo: "https://app-registro-gastos.web.app/iniciar-sesion",
+          linkRepo: "https://github.com/joaquinIMB/Re-Con-Gastos",
         },
         {
           id: "project2",
@@ -245,7 +251,8 @@ export const translations = {
           technologies:
             "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
           image: "/helpdesk.jpg",
-          link: "https://github.com/joaquinIMB/sistema-tickets",
+          linkDemo: "https://github.com/joaquinIMB/sistema-tickets",
+          linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
         },
         {
           id: "project3",
@@ -255,7 +262,8 @@ export const translations = {
             "A dynamic and responsive personal portfolio designed to showcase projects and skills with elegant animations using GSAP and Tailwind CSS. Built to be scalable and performant with a strong aesthetic focus.",
           technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
           image: "/portafolio.jpg",
-          link: "https://portafolio-joaquin-exequiel.vercel.app/",
+          linkDemo: "https://portafolio-joaquin-exequiel.vercel.app/",
+          linkRepo: "https://github.com/joaquinIMB/portafolio",
         },
         {
           id: "project4",
@@ -266,22 +274,29 @@ export const translations = {
             "A static portfolio site built as a capstone project to demonstrate skills acquired during the course. It includes responsive layouts, styled components with SCSS, and clear organization of personal and professional projects.",
           technologies: "HTML, CSS, SCSS",
           image: "/portafolioCoder.jpg",
-          link: "https://proyectofinaljoaquinimbriago.netlify.app/",
+          linkDemo: "https://proyectofinaljoaquinimbriago.netlify.app/",
+          linkRepo: "https://github.com/joaquinIMB/Portafolio-CODERHOUSE",
         },
       ],
     },
     contactMeSection: {
-      state: "Available",
-      title: "Let's Start a Project Together",
+      spanPresentation: "ContactMe",
+      title: "Let's talk about your",
+      span: "project",
       paragraph1:
-        "Let's make your next website a reality with a modern design and exceptional features.",
+        "Let's bring your next website to life with a modern design and exceptional features.",
     },
+    
     footerSection: {
       title: "Joaquin Imbriago",
-      paragraph1: "Full-stack Developer specialized in creating modern and engaging digital experiences.",
+      title2:"Navegation",
+      title3:"Contact",
+      title4:"Suscribe",
+      paragraph1:
+        "Full-stack Developer specialized in creating modern and engaging digital experiences.",
       paragraph2: "Receive updates about my new projects and articles.",
-      copyright: "Joaquin Imbriago. All rights reserved."
-  },
+      copyright: "Joaquin Imbriago. All rights reserved.",
+    },
     metadata: {
       page: "Home",
       title: "Portfolio Joaquin",
