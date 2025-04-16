@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { ArrowRight, Code } from "lucide-react";
-import { translations } from "@/utils/translations";
+import { useTranslations } from "@/hooks/useTranslations";
 
 const Home = () => {
-  const { mainPage } = translations.es;
+
+  const { mainPage } = useTranslations();
 
   return (
     <main
       id="home"
-      className="relative flex items-center px-20 pt-20 pb-8 w-[90%] max-sm:px-2 max-sm:pb-10 h-[90vh] max-sm:justify-center max-sm:w-[98%] max-sm:text-center transition-all"
+      className="relative duration-300 flex items-center px-20 pt-20 pb-8 w-[90%] max-sm:px-2 max-sm:pb-10 h-[90vh] max-sm:justify-center max-sm:w-[98%] max-sm:text-center transition-all"
     >
       <div className="absolute w-[90%] h-full">
         <div className="absolute w-[150px] h-[150px] rounded-full bg-purple-700 opacity-5 blur-[80px] top-[380px] left-[0px] animate-pulse" />
