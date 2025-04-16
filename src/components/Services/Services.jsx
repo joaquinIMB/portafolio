@@ -1,21 +1,19 @@
-import { translations } from "@/utils/translations";
+import { useTranslations } from "@/hooks/useTranslations";
+import { SpanPresentation } from "../SpanPresentation/SpanPresentation";
 
 const Services = () => {
-
-  const { servicesSection } = translations.es;
+  const { servicesSection } = useTranslations();
 
   return (
     <section
       id="services"
-      className="relative pt-20 pb-10 px-12 max-sm:px-4 max-sm:pb-4 overflow-hidden"
+      className="relative pt-20 pb-10 px-12 max-sm:px-4 max-sm:pb-4 overflow-hidden transition-all duration-300"
     >
       <div className="relative max-w-6xl z-10 container mx-auto max-sm:px-0">
         <div className="max-w-4xl mx-auto mb-6">
           <div className="flex items-center gap-2 mb-4 max-md:mb-0">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-cyan-500/50"></div>
-            <span className="text-cyan-400 text-lg font-mono tracking-wider px-4">
-              {"<Servicios />"}
-            </span>
+            <SpanPresentation span={servicesSection.spanPresentation} />
             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-purple-500/50"></div>
           </div>
           <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-2 tracking-tight text-center">

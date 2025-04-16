@@ -1,6 +1,9 @@
 import { Mail, Send, User, MessageSquare } from "lucide-react";
+import { useLanguageStore } from "@/app/store";
 
 const Form = () => {
+  const { language } = useLanguageStore();
+
   return (
     <form
       className="relative bg-[#1e1e2ecc] p-10 rounded-2xl border border-[#80808033] shadow-[0 10px 30px] shadow-[
@@ -11,7 +14,7 @@ const Form = () => {
           <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <input
             type="text"
-            placeholder="Nombre"
+            placeholder={language === "es" ? "Nombre" : "Name"}
             className="w-full py-4 px-12 bg-[#1e1e2e80] border border-[#80808033] rounded-lg text-white transition duration-300 focus:outline-0 focus:border-[#9333ea] focus:shadow-[0 0 10px 39333ea80]"
           />
         </div>
@@ -29,9 +32,10 @@ const Form = () => {
       <div className="relative mb-6">
         <MessageSquare className="absolute left-3 top-5 text-gray-500" />
         <textarea
-          placeholder="Mensaje"
+          id="message"
+          placeholder={language === "es" ? "Mensaje" : "Message"}
           rows={5}
-          className="w-full py-4 px-12 bg-[#1e1e2e80] border border-[#80808033] rounded-lg text-white transition duration-300 focus:outline-0 focus:border-[#9333ea] focus:shadow-[0 0 10px 39333ea80]"
+          className="w-full py-4 px-12 bg-[#1e1e2e80] border border-[#80808033] min-h-20 max-h-56 rounded-lg text-white transition duration-300 focus:outline-0 focus:border-[#9333ea] focus:shadow-[0 0 10px 39333ea80]"
         ></textarea>
       </div>
 
@@ -40,7 +44,7 @@ const Form = () => {
         className="w-full p-4 border-none rounded-lg font-bold cursor-pointer text-white bg-linear-to-r from-[#06b6d4] to-[#9333ea]"
       >
         <Send className="inline-block mr-2" />
-        Enviar mensaje
+        {language === "es" ? "Enviar" : "Send"}
       </button>
     </form>
   );

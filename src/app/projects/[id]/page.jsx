@@ -1,33 +1,40 @@
-import { translations } from "@/utils/translations";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, FolderGit2 } from "lucide-react";
+import { useParams } from "next/navigation";
+import { useTranslations } from "@/hooks/useTranslations";
+import { useLanguageStore } from "@/app/store";
 
-export const generateMetadata = async ({ params }) => {
-  const { id } = await params;
-  const { projects } = translations.es.projectsSection;
+// export const generateMetadata = () => {
+//   const { id } = useParams();
+//   const { projects } = translations.es.projectsSection;
 
-  const projectIndex = projects.findIndex((p) => p.id === id);
+//   const projectIndex = projects.findIndex((p) => p.id === id);
 
-  if (projectIndex === -1) {
-    return {
-      title: "Proyecto no encontrado",
-      description: "El proyecto que buscas no existe.",
-    };
-  }
+//   if (projectIndex === -1) {
+//     return {
+//       title: "Proyecto no encontrado",
+//       description: "El proyecto que buscas no existe.",
+//     };
+//   }
 
-  const project = projects[projectIndex];
+//   const project = projects[projectIndex];
 
-  return {
-    title: `${project.title} - Portafolio Joaquin`,
-    description: project.description,
-  };
-};
+//   return {
+//     title: `${project.title} - Portafolio Joaquin`,
+//     description: project.description,
+//   };
+// };
 
-export default async function ProjectPage({ params }) {
-  const { id } = await params;
-  const { projects } = translations.es.projectsSection;
+export default function ProjectPage() {
+  const { id } = useParams();
+  const { projectsSection } = useTranslations();
+  const { language } = useLanguageStore();
+
+  const { projects } = projectsSection;
 
   const projectIndex = projects.findIndex((p) => p.id === id);
 
@@ -90,7 +97,7 @@ export default async function ProjectPage({ params }) {
       <div className="mx-[82px] mt-6 max-lg:mx-0">
         <h3 className="text-2xl max-sm:text-xl font-semibold">
           <span className="bg-gradient-to-r from-cyan-500 to-cyan-400 bg-clip-text text-transparent">
-            Tecnologías utilizadas
+            {language === "es" ? "Tecnologías" : "Technologies"}
           </span>
         </h3>
         <p className="text-gray-300 mt-2 max-sm:text-sm">
@@ -113,13 +120,13 @@ export default async function ProjectPage({ params }) {
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 text-center bg-gradient-to-r from-gray-900 to-slate-900 rounded-lg text-white font-bold transition-transform hover:scale-105 shadow-lg w-fit"
         >
-         <FolderGit2 className="inline-block mr-2" />
+          <FolderGit2 className="inline-block mr-2" />
         </Link>
       </div>
 
       <div className="mx-[82px] mt-8 max-lg:mx-0">
         <h2 className="text-2xl font-bold mb-6 text-gray-500 max-sm:text-xl">
-          Otros proyectos
+          {language === "es" ? "Otros proyectos" : "Other projects"}
         </h2>
         <div className="flex overflow-x-hidden gap-6 pb-4 no-scrollbar snap-x snap-mandatory">
           {otherProjects.map((proj) => (

@@ -42,3 +42,21 @@ body::-webkit-scrollbar-thumb:hover {
   }
   
 }
+
+#message::-webkit-scrollbar {
+  width: 8px;
+}
+
+#message::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 8px;
+}
+
+#message::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
+  border-radius: 8px;
+}
+
+#message::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #22d3ee, #a78bfa);
+}
