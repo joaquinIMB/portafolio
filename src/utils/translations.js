@@ -30,7 +30,7 @@ export const translations = {
       paragraph1: "Desarrollador de aplicaciones web",
       paragraph2: "Juntos podemos trasladar tus ideas a un proyecto real",
       buttonContact1: "Hablemos",
-      buttonContact2: "Sobre mí",
+      buttonAbout: "Sobre mí",
     },
     servicesSection: {
       spanPresentation: "Servicios",
@@ -106,7 +106,7 @@ export const translations = {
         {
           id: "project3",
           title: "Portafolio Next.js",
-          description: "Portafolio web moderno para desarrolladores",
+          description: "Portafolio web moderno de desarrollador",
           paragraph1:
             "Portafolio personal dinámico y responsivo diseñado para mostrar proyectos y habilidades con animaciones elegantes utilizando GSAP y Tailwind CSS. Construido para ser escalable, performante y visualmente atractivo.",
           technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
@@ -137,9 +137,9 @@ export const translations = {
     },
     footerSection: {
       title: "Joaquin Imbriago",
-      title2:"Navegación",
-      title3:"Contacto",
-      title4:"Suscríbete",
+      title2: "Navegación",
+      title3: "Contacto",
+      title4: "Suscríbete",
       paragraph1:
         "Desarrollador FullStack especializado en crear experiencias digitales modernas y atractivas.",
       paragraph2:
@@ -182,7 +182,7 @@ export const translations = {
       paragraph1: "Web Application Developer",
       paragraph2: "Together we can turn your ideas into a real project",
       buttonContact1: "Get in touch",
-      buttonContact2: "About me",
+      buttonAbout: "About me",
     },
     servicesSection: {
       spanPresentation: "Services",
@@ -286,12 +286,12 @@ export const translations = {
       paragraph1:
         "Let's bring your next website to life with a modern design and exceptional features.",
     },
-    
+
     footerSection: {
       title: "Joaquin Imbriago",
-      title2:"Navegation",
-      title3:"Contact",
-      title4:"Suscribe",
+      title2: "Navegation",
+      title3: "Contact",
+      title4: "Suscribe",
       paragraph1:
         "Full-stack Developer specialized in creating modern and engaging digital experiences.",
       paragraph2: "Receive updates about my new projects and articles.",

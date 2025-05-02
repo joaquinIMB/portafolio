@@ -8,7 +8,6 @@ import { useLanguageStore } from "@/app/store";
 import { envioronmentLink } from "@/utils/envioronmentLink";
 
 const Footer = () => {
-
   const { language } = useLanguageStore();
   const { footerSection } = useTranslations();
   const { navLinks } = useTranslations();
@@ -23,9 +22,7 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t border-gray-800 w-full">
       <div className="absolute inset-0 bg-gradient-to-b from-slate-black to-purple-500/50"></div>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-30"></div>
-      <div className="relative z-10 container mx-auto px-10 py-8 max-md:px-6 max-sm:px-4">
+      <div className="relative z-10 mx-auto px-10 py-8 max-md:px-6 max-sm:px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4">
             <div className="flex items-center gap-2">

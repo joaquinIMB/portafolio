@@ -23,10 +23,7 @@ const ContactMe = () => {
               {contactMeSection.span}
             </span>
           </h2>
-          <p
-            className="text-gray-400 text-lg mt-5
-          "
-          >
+          <p className="text-gray-400 text-lg mt-5">
             {contactMeSection.paragraph1}
           </p>
         </div>

@@ -3,7 +3,6 @@ import { ArrowRight, Code } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 
 const Home = () => {
-
   const { mainPage } = useTranslations();
 
   return (
@@ -39,11 +38,13 @@ const Home = () => {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
-            href="#"
+            href="https://drive.google.com/file/d/19IFD7jXJBNqhp9mLubMVubmId4nFnAyo/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 border border-gray-600 text-gray-300 py-3 px-6 rounded-full transition-colors hover:bg-gray-800"
           >
             <Code className="w-5 h-5" />
-            {mainPage.buttonContact2}
+            {mainPage.buttonAbout}
           </Link>
         </div>
       </div>

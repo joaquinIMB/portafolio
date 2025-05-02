@@ -29,7 +29,7 @@ const SliderProjects = ({ projectsSection }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    beforeChange: (current, next) => setActiveSlide(next),
+    beforeChange: (next) => setActiveSlide(next),
     appendDots: (dots) => (
       <div className={styles.dotsContainer}>
         <ul>{dots}</ul>
@@ -44,7 +44,6 @@ const SliderProjects = ({ projectsSection }) => {
     ),
   };
 
-  // Manejo del drag para pantallas grandes
   const handleMouseDown = () => {
     setIsDragging(true);
   };
@@ -61,7 +60,7 @@ const SliderProjects = ({ projectsSection }) => {
             <div key={`${project.id}-${idx}`} className="gap-2">
               <Link
                 href={`/projects/${project.id}`}
-                className="relative overflow-hidden bg-gray-800/50 border border-gray-700 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-96 w-full flex-shrink-0"
+                className="relative overflow-hidden bg-gray-800/50 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-96 w-full flex-shrink-0"
               >
                 <img
                   src={project.image}
