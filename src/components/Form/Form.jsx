@@ -7,7 +7,7 @@ const Form = () => {
   return (
     <form
       className="relative bg-[#1e1e2ecc] p-10 rounded-2xl border border-[#80808033] shadow-[0 10px 30px] shadow-[
-        #0000004d] min-w-[860px] max-md:min-w-[460px] max-lg:min-w-[680px] max-sm:min-w-[95%] max-sm:p-4 transition-all max-md:mt-4"
+        #0000004d] min-w-[860px] max-lg:min-w-[680px] max-md:min-w-[95%] max-sm:p-4 transition-all max-md:mt-4"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="relative">

@@ -1,0 +1,77 @@
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: calc(320px - 8);
+  animation:slide 20s linear infinite;
+}
+
+.slider.paused {
+  animation-play-state: paused;
+}
+
+.slider:hover {
+  animation-play-state: paused;
+}
+
+/* Contenedor de los dots */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Estilo base de cada dot */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.active {
+  width: 12px;
+  background-color: #9f7aea;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6b46c1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillLoader 3s linear forwards;
+  z-index: 1;
+}
+
+@keyframes fillLoader {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slider:hover {
+    animation-play-state: running;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-351.8px * 4));
+  }
+}

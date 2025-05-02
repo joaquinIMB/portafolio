@@ -11,12 +11,12 @@ const Services = () => {
     >
       <div className="relative max-w-6xl z-10 container mx-auto max-sm:px-0">
         <div className="max-w-4xl mx-auto mb-6">
-          <div className="flex items-center gap-2 mb-4 max-md:mb-0">
+          <div className="flex items-center gap-2 mb-4">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-cyan-500/50"></div>
             <SpanPresentation span={servicesSection.spanPresentation} />
             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-purple-500/50"></div>
           </div>
-          <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-2 tracking-tight text-center">
+          <h2 className="text-[60px] md:text-6xl max-sm:text-4xl font-bold text-white mb-4 tracking-tight text-center">
             {servicesSection.title}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
               {servicesSection.span}

@@ -96,16 +96,16 @@ export default function ProjectPage() {
 
       <div className="mx-[82px] mt-6 max-lg:mx-0">
         <h3 className="text-2xl max-sm:text-xl font-semibold">
-          <span className="bg-gradient-to-r from-cyan-500 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-purple-800 bg-clip-text text-transparent">
             {language === "es" ? "Tecnologías" : "Technologies"}
           </span>
         </h3>
-        <p className="text-gray-300 mt-2 max-sm:text-sm">
+        <p className="text-gray-300 mt-2 max-sm:text-sm leading-6">
           {project.technologies}
         </p>
       </div>
 
-      <div className="mx-[82px] mt-8 max-lg:mx-0 flex gap-4 flex-wrap">
+      <div className="mx-[82px] mt-6 max-lg:mx-0 flex gap-4 flex-wrap">
         <Link
           href={project.linkDemo}
           target="_blank"
@@ -128,14 +128,14 @@ export default function ProjectPage() {
         <h2 className="text-2xl font-bold mb-6 text-gray-500 max-sm:text-xl">
           {language === "es" ? "Otros proyectos" : "Other projects"}
         </h2>
-        <div className="flex overflow-x-hidden gap-6 pb-4 no-scrollbar snap-x snap-mandatory">
+        <div className="flex overflow-x-hidden gap-6 pb-4 no-scrollbar snap-x snap-mandatory max-lg:flex-col max-lg:items-center">
           {otherProjects.map((proj) => (
             <Link
               key={proj.id}
               href={`/projects/${proj.id}`}
-              className="min-w-[280px] max-w-[300px] snap-start shrink-0 bg-gray-800/60 border border-gray-700 rounded-sm overflow-hidden "
+              className="min-w-[280px] max-w-[300px] snap-start shrink-0 bg-gray-800/60 border border-gray-700 rounded-sm overflow-hidden max-lg:min-w-full "
             >
-              <div className="relative h-48 w-full overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden max-lg:h-96">
                 <Image
                   src={proj.image || "/placeholder.svg"}
                   alt={proj.title}
@@ -144,13 +144,20 @@ export default function ProjectPage() {
                   className="transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">
-                  <span className="bg-gradient-to-r from-cyan-500 to-cyan-400 bg-clip-text text-transparent">
-                    {proj.title}
-                  </span>
-                </h3>
-                <p className="text-sm text-gray-300 mt-2">{proj.description}</p>
+              <div className="flex p-4 justify-between items-end">
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-semibold">
+                    <span className="bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">
+                      {proj.title}
+                    </span>
+                  </h3>
+                  <p className="text-sm text-gray-300 mt-2 w-[310px]">
+                    {proj.description}
+                  </p>
+                </div>
+                <button className="hidden text-gray-400 hover:text-gray-200 transition max-lg:block cursor-pointer">
+                  {language === "es" ? "Ver más" : "See more"}
+                </button>
               </div>
             </Link>
           ))}
