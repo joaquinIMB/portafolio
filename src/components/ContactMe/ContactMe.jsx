@@ -8,7 +8,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="relative min-sm:pb-12 pt-18 px-0 max-lg:mx-auto max-sm:pb-20 max-md:pt-22 transition-all duration-300"
+      className="relative min-sm:pb-12 pt-18 px-0 max-lg:mx-auto max-sm:pb-20 max-md:pt-28 transition-all duration-300"
     >
       <div className="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center max-lg:w-full max-lg:p-0 max-sm:px-[11px] min-h-[86vh] max-sm:justify-end gap-2 max-sm:min-h-auto max-md:mt-6">
         <div className="max-w-3xl mx-auto text-center flex flex-col justify-end h-[170px] mb-4 max-md:mb-0">

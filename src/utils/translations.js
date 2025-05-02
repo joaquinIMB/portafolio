@@ -98,7 +98,7 @@ export const translations = {
           paragraph1:
             "Sistema de tickets personalizado para Punto Deportivo, que permite al equipo registrar, actualizar y resolver tickets de soporte eficientemente. Incluye notificaciones en tiempo real, gestión de roles de usuario y paneles administrativos.",
           technologies:
-            "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+            "React, Next Js 14, Node Js, Express, Tailwind CSS, MSSQL, RTK Query, Context API, Vercel",
           image: "/helpdesk.jpg",
           linkDemo: "https://sistema-tickets-punto.vercel.app",
           linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
@@ -249,7 +249,7 @@ export const translations = {
           paragraph1:
             "A customized internal ticketing system for Punto Deportivo, allowing staff to register, update, and resolve support tickets efficiently. Includes real-time notifications, user role management, and administrative dashboards.",
           technologies:
-            "Next.js 14, Express, Tailwind CSS, MSSQL, RTK Query, Context API",
+            "React, Next Js 14, Node Js, Express, Tailwind CSS, MSSQL, RTK Query, Context API, Vercel",
           image: "/helpdesk.jpg",
           linkDemo: "https://github.com/joaquinIMB/sistema-tickets",
           linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
