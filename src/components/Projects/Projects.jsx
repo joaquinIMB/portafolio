@@ -1,6 +1,8 @@
 import { useTranslations } from "@/hooks/useTranslations";
 import { SpanPresentation } from "../SpanPresentation/SpanPresentation";
 import SliderProjects from "../SliderProjects/SliderProjects";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   const { projectsSection } = useTranslations();
@@ -27,7 +29,7 @@ const Projects = () => {
             {projectsSection.paragraph1}
           </p>
         </div>
-        <SliderProjects projectsSection={projectsSection}/>
+        <SliderProjects projectsSection={projectsSection} />
       </div>
     </section>
   );

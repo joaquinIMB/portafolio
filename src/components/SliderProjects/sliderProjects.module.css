@@ -3,7 +3,7 @@
   align-items: center;
   gap: 2rem;
   width: calc(320px - 8);
-  animation:slide 20s linear infinite;
+  animation: slide 20s linear infinite;
 }
 
 .slider.paused {
@@ -14,7 +14,6 @@
   animation-play-state: paused;
 }
 
-/* Contenedor de los dots */
 .dotsContainer {
   display: flex;
   justify-content: center;
@@ -22,7 +21,6 @@
   margin-top: 1rem;
 }
 
-/* Estilo base de cada dot */
 .dot {
   width: 12px;
   height: 12px;

@@ -3,7 +3,7 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 :root {
-  background: #000 ;
+  background: #000;
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,6 @@ body::-webkit-scrollbar-thumb:hover {
   body::-webkit-scrollbar {
     display: none;
   }
-  
 }
 
 #message::-webkit-scrollbar {
