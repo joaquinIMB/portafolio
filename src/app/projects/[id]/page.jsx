@@ -96,11 +96,11 @@ export default function ProjectPage() {
 
       <div className="mx-[82px] mt-6 max-lg:mx-0 transition-all duration-500">
         <h3 className="text-2xl max-sm:text-xl font-semibold">
-          <span className="bg-purple-800 bg-clip-text text-transparent">
+          <span className="bg-white bg-clip-text text-transparent">
             {language === "es" ? "Tecnologías" : "Technologies"}
           </span>
         </h3>
-        <p className="text-gray-300 mt-2 max-sm:text-sm leading-6">
+        <p className="text-gray-400 mt-2 max-sm:text-sm leading-6">
           {project.technologies}
         </p>
       </div>

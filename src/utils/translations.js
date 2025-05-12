@@ -28,9 +28,17 @@ export const translations = {
       title: "Hola! Soy",
       span: "Joaco",
       paragraph1: "Desarrollador de aplicaciones web",
-      paragraph2: "Juntos podemos trasladar tus ideas a un proyecto real",
+      paragraph2: "Juntos podemos trasladar tus ideas a un proyecto real.",
       buttonContact1: "Hablemos",
       buttonAbout: "Sobre mí",
+    },
+    aboutMeSection: {
+      title: "Desarrollador",
+      span:"Full Stack",
+      spanPresentation:"Sobre mi",
+      paragraph1: "Hola! Soy Joaco. Comencé mi carrera como desarrollador hace más de 3 años.",
+      paragraph2:
+        "Luego de un año de estudio intensivo de manera autónoma, tuve la oportunidad de aplicar mis conocimientos en Punto Deportivo Argentina. Allí lideré el desarrollo de un sistema interno tipo helpdesk, lo que me permitió abordar desafíos reales de programación y análisis de procesos. Esta experiencia consolidó mi dominio del stack React, Next.js y Node.js, así como el diseño de bases de datos en SQL Server,interfaces responsivas con Tailwind CSS y buenas prácticas como el control de versiones y la optimización SEO.",
     },
     servicesSection: {
       spanPresentation: "Servicios",
@@ -82,7 +90,7 @@ export const translations = {
       projects: [
         {
           id: "project1",
-          title: "ReCon",
+          title: "Recon",
           description: "Plataforma de gestión financiera personal",
           paragraph1:
             "Aplicación web para administrar finanzas personales. Permite registrar gastos, visualizar estadísticas y consultar gráficos intuitivos que brindan una visión clara de la salud financiera del usuario.",
@@ -180,9 +188,17 @@ export const translations = {
       title: "Hi, I'm",
       span: "Joaco!",
       paragraph1: "Web Application Developer",
-      paragraph2: "Together we can turn your ideas into a real project",
+      paragraph2: "Together we can turn your ideas into a real project.",
       buttonContact1: "Get in touch",
       buttonAbout: "About me",
+    },
+    aboutMeSection: {
+      title: "Full Stack",
+      span:"Developer",
+      spanPresentation:"About me",
+      paragraph1: "I began my career as a developer over 3 years ago.",
+      paragraph2:
+        "After a year of intensive self-study, I had the opportunity to apply my knowledge at Punto Deportivo Argentina, where I led the development of an internal helpdesk system. This allowed me to tackle real-world challenges in programming and process analysis. The experience solidified my skills with the React, Next.js, and Node.js stack, database design using SQL Server, responsive interfaces with Tailwind CSS, and best practices such as version control and SEO optimization.",
     },
     servicesSection: {
       spanPresentation: "Services",
@@ -233,7 +249,7 @@ export const translations = {
       projects: [
         {
           id: "project1",
-          title: "ReCon",
+          title: "Recon",
           description: "Personal finance management platform",
           paragraph1:
             "A web application for managing personal finances. Users can track expenses, review statistics, and visualize data through intuitive graphs and charts, offering a clear view of their financial health.",

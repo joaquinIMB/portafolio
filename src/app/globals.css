@@ -54,3 +54,10 @@ body::-webkit-scrollbar-thumb:hover {
 #message::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #22d3ee, #a78bfa);
 }
+
+.mask-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
