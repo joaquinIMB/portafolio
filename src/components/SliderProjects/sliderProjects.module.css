@@ -22,18 +22,18 @@
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 99%;
   background-color: #e6e6e6;
-  margin: 0 5px;
+  margin: 12px 5px 0 5px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .active {
-  width: 12px;
+  width: 8px;
   background-color: #9f7aea;
 }
 

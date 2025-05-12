@@ -2,13 +2,13 @@ import Link from "next/link";
 import { ArrowRight, Code } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 
-const Home = () => {
+const HomePage = () => {
   const { mainPage } = useTranslations();
 
   return (
     <main
       id="home"
-      className="relative duration-300 flex items-center px-20 pt-20 pb-8 w-[90%] max-sm:px-2 max-sm:pb-10 h-[90vh] max-sm:justify-center max-sm:w-[98%] max-sm:text-center transition-all"
+      className="relative duration-300 flex items-center px-20 pt-10 pb-8 w-[90%] max-sm:px-2 max-sm:pb-10 h-[100svh] max-sm:justify-center max-sm:w-[98%] max-sm:text-center transition-all"
     >
       <div className="absolute w-[90%] h-full">
         <div className="absolute w-[150px] h-[150px] rounded-full bg-purple-700 opacity-5 blur-[80px] top-[380px] left-[0px] animate-pulse" />
@@ -38,10 +38,8 @@ const Home = () => {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
-            href="https://drive.google.com/file/d/19IFD7jXJBNqhp9mLubMVubmId4nFnAyo/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 border border-gray-600 text-gray-300 py-3 px-6 rounded-full transition-colors hover:bg-gray-800"
+            href="#about"
+            className="flex items-center gap-2 border border-gray-600 text-gray-300 py-3 px-6 rounded-full cursor-pointer transition-colors hover:bg-gray-800"
           >
             <Code className="w-5 h-5" />
             {mainPage.buttonAbout}
@@ -52,4 +50,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

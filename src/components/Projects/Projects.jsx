@@ -1,8 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations";
 import { SpanPresentation } from "../SpanPresentation/SpanPresentation";
 import SliderProjects from "../SliderProjects/SliderProjects";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   const { projectsSection } = useTranslations();
