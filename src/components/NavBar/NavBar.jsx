@@ -74,6 +74,8 @@ const NavBar = () => {
         stagger: 0.1,
         ease: "power2",
       });
+    }else{
+      document.body.style.overflow = "auto"
     }
   }, [showMenu]);
 
