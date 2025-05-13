@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import { Code, Terminal, Server, Database, Laptop } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import Link from "next/link";
@@ -7,23 +5,6 @@ import TechIcons from "../TechIcons/TechIcons";
 
 const AboutMe = () => {
   const { aboutMeSection } = useTranslations();
-
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-    tl.fromTo(
-      imageRef.current,
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1 }
-    ).fromTo(
-      contentRef.current,
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1 }
-    );
-  }, []);
 
   return (
     <section id="about" className="relative py-20 transition-all duration-300">
@@ -37,7 +18,7 @@ const AboutMe = () => {
         </div>
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-12 max-md:gap-8 max-lg:flex-col max-lg:justify-center max-[1280px]:items-start max-lg:items-center">
-            <div ref={imageRef} className="relative opacity-0 max-lg:w-[60%]">
+            <div className="relative max-lg:w-[60%]">
               <div className="relative rounded-2xl overflow-hidden max-lg:rounded-full">
                 <img
                   src="/joaco.jpg"
@@ -62,8 +43,7 @@ const AboutMe = () => {
               <div className="absolute -bottom-6 -right-6 w-12 h-12 border-t border-l border-purple-500/30 rounded-tl-xl"></div>
             </div>
             <div
-              ref={contentRef}
-              className="opacity-0 max-md:w-[100svw] max-md:px-4"
+              className="max-md:w-[100svw] max-md:px-4"
             >
               <div className="space-y-6 max-lg:text-center">
                 <div className="flex items-center gap-3 max-lg:justify-center">
@@ -78,7 +58,7 @@ const AboutMe = () => {
                   </h2>
                 </div>
                 <div className="space-y-3 text-gray-300">
-                  <p>{aboutMeSection.paragraph1}</p>
+                  <p className="max-sm:px-4">{aboutMeSection.paragraph1}</p>
                   <p>{aboutMeSection.paragraph2}</p>
                   <p>{aboutMeSection.paragraph3}</p>
                 </div>
