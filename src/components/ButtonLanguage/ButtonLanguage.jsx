@@ -1,14 +1,12 @@
 import { useLanguageStore } from "@/app/store";
 import { Globe } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const ButtonLanguage = ({ showMenu }) => {
   const [showLanguage, setShowLanguage] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const { language, setLanguage } = useLanguageStore();
 
   useEffect(() => {
-    setHasMounted(true);
 
     const storedLang = localStorage.getItem("language");
 
@@ -33,8 +31,6 @@ const ButtonLanguage = ({ showMenu }) => {
     localStorage.setItem("language", lang);
     setShowLanguage(false);
   };
-
-  if (!hasMounted) return null;
 
   return (
     <div className="relative inline-block text-left">

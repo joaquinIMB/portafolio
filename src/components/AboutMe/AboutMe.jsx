@@ -58,7 +58,7 @@ const AboutMe = () => {
                   </h2>
                 </div>
                 <div className="space-y-3 text-gray-300">
-                  <p>{aboutMeSection.paragraph1}</p>
+                  <p className="max-sm:px-4">{aboutMeSection.paragraph1}</p>
                   <p>{aboutMeSection.paragraph2}</p>
                   <p>{aboutMeSection.paragraph3}</p>
                 </div>
