@@ -5,7 +5,7 @@ import styles from "./sliderProjects.module.css";
 
 const SliderProjects = ({ projectsSection }) => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
+  const [isHover, setIsHover] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -44,11 +44,11 @@ const SliderProjects = ({ projectsSection }) => {
   };
 
   const handleMouseDown = () => {
-    setIsDragging(true);
+    setIsHover(true);
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    setIsHover(false);
   };
 
   if (isMobile) {
@@ -59,7 +59,7 @@ const SliderProjects = ({ projectsSection }) => {
             <div key={`${project.id}-${idx}`} className="gap-2">
               <Link
                 href={`/projects/${project.id}`}
-                className="relative overflow-hidden bg-gray-800/50 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-96 w-full flex-shrink-0"
+                className="relative overflow-hidden bg-gray-800/50 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-116 w-full flex-shrink-0"
               >
                 <img
                   src={project.image}
@@ -86,12 +86,12 @@ const SliderProjects = ({ projectsSection }) => {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      <div className={`${styles.slider} ${isDragging ? styles.paused : ""}`}>
+      <div className={`${styles.slider} ${isHover ? styles.paused : ""}`}>
         {duplicatedProjects.map((project, idx) => (
           <Link
             key={`${project.id}-${idx}`}
             href={`/projects/${project.id}`}
-            className="relative overflow-hidden rounded-lg bg-gray-800/50 border border-gray-700 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-96 w-[320px] flex-shrink-0"
+            className="relative overflow-hidden rounded-lg bg-gray-800/50 border border-gray-700 transition-transform duration-200 hover:border-purple-400/50 focus-within:border-purple-400/50 group h-100 w-[380px] flex-shrink-0"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 blur-lg opacity-0 group-hover:opacity-30 transition"></div>
             <img

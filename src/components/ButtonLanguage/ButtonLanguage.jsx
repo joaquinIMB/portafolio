@@ -1,28 +1,17 @@
+"use client";
+
 import { useLanguageStore } from "@/app/store";
 import { Globe } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 const ButtonLanguage = ({ showMenu }) => {
   const [showLanguage, setShowLanguage] = useState(false);
+  const menuRef = useRef(null);
   const { language, setLanguage } = useLanguageStore();
 
-  useEffect(() => {
-
-    const storedLang = localStorage.getItem("language");
-
-    if (storedLang) {
-      return setLanguage(storedLang);
-    }
-
-    const browserLang = navigator.language.slice(0, 2);
-    const validLang = ["es", "en"].includes(browserLang) ? browserLang : "en";
-
-    localStorage.setItem("language", validLang);
-    return setLanguage(validLang);
-  }, []);
-
   const handleClickLanguage = () => {
-    setShowLanguage(!showLanguage);
+    setShowLanguage((prev) => !prev);
   };
 
   const selectLanguage = (lang) => {
@@ -31,6 +20,22 @@ const ButtonLanguage = ({ showMenu }) => {
     localStorage.setItem("language", lang);
     setShowLanguage(false);
   };
+
+  // Animación con GSAP al aparecer el menú
+  useEffect(() => {
+    if (showLanguage && menuRef.current) {
+      gsap.fromTo(
+        menuRef.current,
+        { opacity: 0, y: showMenu ? 10 : -10 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        }
+      );
+    }
+  }, [showLanguage, showMenu]);
 
   return (
     <div className="relative inline-block text-left">
@@ -45,6 +50,7 @@ const ButtonLanguage = ({ showMenu }) => {
 
       {showLanguage && (
         <div
+          ref={menuRef}
           className={`absolute right-0 w-28 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-50 ${
             showMenu
               ? "bottom-full mb-2 origin-bottom-right"

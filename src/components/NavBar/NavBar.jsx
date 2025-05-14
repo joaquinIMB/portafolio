@@ -22,38 +22,83 @@ const NavBar = () => {
 
   useEffect(() => {
     if (window.innerWidth > 768) {
-      gsap.from(nav.current?.children, {
-        y: -60,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
-      gsap.from(nav2.current?.children, {
-        y: -60,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
-      gsap.from(nav3.current?.children, {
-        y: -60,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: "power2.out",
-      });
+      gsap.fromTo(
+        nav.current?.children,
+        {
+          y: -60,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+      gsap.fromTo(
+        nav2.current?.children,
+        {
+          y: -60,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+      gsap.fromTo(
+        nav3.current?.children,
+        {
+          y: -60,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power2.out",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
     } else {
-      gsap.from(nav.current?.children, {
-        x: -60,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
-      gsap.from(burgerMenu.current?.children, {
-        x: 60,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
+      gsap.fromTo(
+        nav.current?.children,
+        {
+          x: -60,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+      gsap.fromTo(
+        burgerMenu.current?.children,
+        {
+          x: 60,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
     }
   }, []);
 
@@ -74,8 +119,8 @@ const NavBar = () => {
         stagger: 0.1,
         ease: "power2",
       });
-    }else{
-      document.body.style.overflow = "auto"
+    } else {
+      document.body.style.overflow = "auto";
     }
   }, [showMenu]);
 
@@ -106,11 +151,13 @@ const NavBar = () => {
 
   return (
     <header
-      className={`flex justify-between items-center w-full py-6 px-8 max-sm:px-4 transition-transform duration-300 ${
-        showMenu
-          ? "bg-black"
-          : "bg-gradient-to-b from-[#000000] from-40% to-transparent"
-      }  fixed top-0 z-50`}
+      className={`flex justify-between items-center w-full py-6 px-8 max-sm:px-4 transition-transform duration-300 
+        ${
+          showMenu
+            ? "bg-black"
+            : "bg-gradient-to-b from-[#000000] from-40% to-transparent"
+        }  
+      fixed top-0 z-50`}
     >
       <div className="flex items-center" ref={nav}>
         <Code className="text-cyan-400 w-6 h-6" />

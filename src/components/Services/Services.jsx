@@ -1,16 +1,87 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "@/hooks/useTranslations";
 import { SpanPresentation } from "../SpanPresentation/SpanPresentation";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Services = () => {
   const { servicesSection } = useTranslations();
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Filtrar los elementos que están definidos
+      const cards = cardsRef.current.filter(Boolean);
+
+      // Header animation
+      gsap.fromTo(
+        ".services-header",
+        {
+          opacity: 0,
+          y: 50,
+          duration: .4,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 30%",
+          },
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: .4,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 30%",
+          },
+        }
+      );
+
+      // Cards animation
+      gsap.fromTo(
+        cards,
+        {
+          opacity: 0,
+          y: 50,
+          duration: .3,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 60%",
+          },
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: .3,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 60%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
       id="services"
+      ref={sectionRef}
       className="relative pt-20 pb-10 px-12 max-sm:px-4 max-sm:pb-4 overflow-hidden transition-all duration-300"
     >
       <div className="relative max-w-6xl z-10 container mx-auto max-sm:px-0">
-        <div className="max-w-4xl mx-auto mb-6">
+        <div className="max-w-4xl mx-auto mb-6 services-header">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-cyan-500/50"></div>
             <SpanPresentation span={servicesSection.spanPresentation} />
@@ -26,13 +97,17 @@ const Services = () => {
             {servicesSection.paragraph1}
           </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {servicesSection.services.map((service) => {
+          {servicesSection.services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
-                className={`service-card group relative p-1 rounded-2xl transition-all duration-500 `}
+                ref={(el) => {
+                  cardsRef.current[index] = el;
+                }}
+                className="service-card group relative p-1 rounded-2xl transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-800 to-transparent rounded-2xl opacity-50"></div>
                 <div
