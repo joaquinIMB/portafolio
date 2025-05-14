@@ -3,76 +3,64 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslations } from "@/hooks/useTranslations";
-import { SpanPresentation } from "../SpanPresentation/SpanPresentation";
+import { useTranslations } from "@/hooks/useTranslations"; // Asegúrate que la ruta sea correcta
+import { SpanPresentation } from "../SpanPresentation/SpanPresentation"; // Asegúrate que la ruta sea correcta
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const { servicesSection } = useTranslations();
   const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
+  const cardsRef = useRef([]); // cardsRef.current será un array de elementos DOM
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Filtrar los elementos que están definidos
+      // Filtrar los elementos que están definidos (buena práctica)
       const cards = cardsRef.current.filter(Boolean);
 
-      // Header animation
+      // Animación del Header (la mantenemos como la tenías)
       gsap.fromTo(
         ".services-header",
         {
           opacity: 0,
           y: 50,
-          duration: .4,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 30%",
-          },
         },
         {
           opacity: 1,
           y: 0,
-          duration: .4,
+          duration: 0.4,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 30%",
+            start: "top 80%",
           },
         }
       );
 
-      // Cards animation
-      gsap.fromTo(
-        cards,
-        {
-          opacity: 0,
-          y: 50,
-          duration: .3,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 60%",
+      cards.forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          {
+            opacity: 0,
+            y: 50,
           },
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: .3,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 60%",
-          },
-        }
-      );
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [servicesSection]);
 
   return (
     <section
@@ -105,7 +93,7 @@ const Services = () => {
               <div
                 key={service.id}
                 ref={(el) => {
-                  cardsRef.current[index] = el;
+                  if (el) cardsRef.current[index] = el;
                 }}
                 className="service-card group relative p-1 rounded-2xl transition-all duration-500"
               >
@@ -113,19 +101,16 @@ const Services = () => {
                 <div
                   className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-[19px] group-hover:opacity-20 transition-opacity duration-500`}
                 ></div>
-
                 <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 h-full overflow-hidden group-hover:border-gray-700 transition-colors duration-300">
                   <div
                     className={`absolute top-6 left-6 w-12 h-12 bg-gradient-to-r ${service.color} rounded-full blur-xl opacity-30`}
                   ></div>
-
                   <div className="relative z-10 flex flex-col h-full">
                     <div
                       className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r ${service.color} mb-6`}
                     >
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-
                     <h3 className="text-2xl font-bold text-white mb-4">
                       {service.name}
                     </h3>
