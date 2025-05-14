@@ -95,7 +95,7 @@ export const translations = {
           paragraph1:
             "Aplicación web para administrar finanzas personales. Permite registrar gastos, visualizar estadísticas y consultar gráficos intuitivos que brindan una visión clara de la salud financiera del usuario.",
           technologies: "React, Firebase, Context API",
-          image: "/recon.jpg",
+          image: "/recon.webp",
           linkDemo: "https://app-registro-gastos.web.app/iniciar-sesion",
           linkRepo: "https://github.com/joaquinIMB/Re-Con-Gastos",
         },
@@ -107,7 +107,7 @@ export const translations = {
             "Sistema de tickets personalizado para Punto Deportivo, que permite al equipo registrar, actualizar y resolver tickets de soporte eficientemente. Incluye notificaciones en tiempo real, gestión de roles de usuario y paneles administrativos.",
           technologies:
             "React, Next Js 14, Node Js, Express, Tailwind CSS, MSSQL, RTK Query, Context API, Vercel",
-          image: "/helpdesk.jpg",
+          image: "/helpdesk.webp",
           linkDemo: "https://sistema-tickets-punto.vercel.app",
           linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
         },
@@ -118,7 +118,7 @@ export const translations = {
           paragraph1:
             "Portafolio personal dinámico y responsivo diseñado para mostrar proyectos y habilidades con animaciones elegantes utilizando GSAP y Tailwind CSS. Construido para ser escalable, performante y visualmente atractivo.",
           technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
-          image: "/portafolio.jpg",
+          image: "/portafolio.webp",
           linkDemo: "https://portafolio-joaquin-exequiel.vercel.app/",
           linkRepo: "https://github.com/joaquinIMB/portafolio",
         },
@@ -130,7 +130,7 @@ export const translations = {
           paragraph1:
             "Sitio de portafolio estático creado como proyecto integrador para demostrar las habilidades adquiridas durante el curso. Incluye diseño responsivo, componentes estilizados con SCSS y organización clara de contenidos personales y profesionales.",
           technologies: "HTML, CSS, SCSS",
-          image: "/portafolioCoder.jpg",
+          image: "/portafolioCoder.webp",
           linkDemo: "https://proyectofinaljoaquinimbriago.netlify.app/",
           linkRepo: "https://github.com/joaquinIMB/Portafolio-CODERHOUSE",
         },
@@ -254,7 +254,7 @@ export const translations = {
           paragraph1:
             "A web application for managing personal finances. Users can track expenses, review statistics, and visualize data through intuitive graphs and charts, offering a clear view of their financial health.",
           technologies: "React, Firebase, Context API",
-          image: "/recon.jpg",
+          image: "/recon.webp",
           linkDemo: "https://app-registro-gastos.web.app/iniciar-sesion",
           linkRepo: "https://github.com/joaquinIMB/Re-Con-Gastos",
         },
@@ -266,7 +266,7 @@ export const translations = {
             "A customized internal ticketing system for Punto Deportivo, allowing staff to register, update, and resolve support tickets efficiently. Includes real-time notifications, user role management, and administrative dashboards.",
           technologies:
             "React, Next Js 14, Node Js, Express, Tailwind CSS, MSSQL, RTK Query, Context API, Vercel",
-          image: "/helpdesk.jpg",
+          image: "/helpdesk.webp",
           linkDemo: "https://github.com/joaquinIMB/sistema-tickets",
           linkRepo: "https://github.com/joaquinIMB/sistema-tickets",
         },
@@ -277,7 +277,7 @@ export const translations = {
           paragraph1:
             "A dynamic and responsive personal portfolio designed to showcase projects and skills with elegant animations using GSAP and Tailwind CSS. Built to be scalable and performant with a strong aesthetic focus.",
           technologies: "Next.js, Tailwind CSS, Vercel, GSAP",
-          image: "/portafolio.jpg",
+          image: "/portafolio.webp",
           linkDemo: "https://portafolio-joaquin-exequiel.vercel.app/",
           linkRepo: "https://github.com/joaquinIMB/portafolio",
         },
@@ -289,7 +289,7 @@ export const translations = {
           paragraph1:
             "A static portfolio site built as a capstone project to demonstrate skills acquired during the course. It includes responsive layouts, styled components with SCSS, and clear organization of personal and professional projects.",
           technologies: "HTML, CSS, SCSS",
-          image: "/portafolioCoder.jpg",
+          image: "/portafolioCoder.webp",
           linkDemo: "https://proyectofinaljoaquinimbriago.netlify.app/",
           linkRepo: "https://github.com/joaquinIMB/Portafolio-CODERHOUSE",
         },

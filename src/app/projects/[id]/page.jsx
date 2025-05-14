@@ -8,27 +8,6 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useLanguageStore } from "@/app/store";
 
-// export const generateMetadata = () => {
-//   const { id } = useParams();
-//   const { projects } = translations.es.projectsSection;
-
-//   const projectIndex = projects.findIndex((p) => p.id === id);
-
-//   if (projectIndex === -1) {
-//     return {
-//       title: "Proyecto no encontrado",
-//       description: "El proyecto que buscas no existe.",
-//     };
-//   }
-
-//   const project = projects[projectIndex];
-
-//   return {
-//     title: `${project.title} - Portafolio Joaquin`,
-//     description: project.description,
-//   };
-// };
-
 export default function ProjectPage() {
   const { id } = useParams();
   const { projectsSection } = useTranslations();
