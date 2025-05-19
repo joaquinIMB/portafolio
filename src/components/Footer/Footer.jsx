@@ -30,7 +30,7 @@ const Footer = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 70%",
+          start: "top 80%",
         },
       });
 

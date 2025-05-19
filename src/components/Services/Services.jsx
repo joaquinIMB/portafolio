@@ -37,7 +37,7 @@ const Services = () => {
         }
       );
 
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         gsap.fromTo(
           card,
           {
