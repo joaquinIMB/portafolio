@@ -18,13 +18,15 @@ const HomePage = () => {
         duration: 0.8,
         ease: "back",
         stagger: 0.1,
+        delay:1
       },
       {
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 1,
         ease: "back",
         stagger: 0.1,
+        delay:.3
       }
     );
   }, []);
