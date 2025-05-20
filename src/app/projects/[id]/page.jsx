@@ -29,11 +29,12 @@ export default function ProjectPage() {
   const nextProject = projects[(projectIndex + 1) % projects.length];
   const otherProjects = projects.filter((p) => p.id !== id);
 
+  const imageRef = useRef(null);
   const mainRef = useRef(null);
   const contentRef = useRef(null);
   const othersContainerRef = useRef(null);
-  const [prevId, setPrevId] = useState(null);
   const isFirstLoad = useRef(true);
+  const [prevId, setPrevId] = useState(null);
 
   const getDirection = (currentIndex, prevIndex) => {
     const total = projects.length;
@@ -44,62 +45,58 @@ export default function ProjectPage() {
   };
 
   useLayoutEffect(() => {
-    if (!mainRef.current || !contentRef.current || !othersContainerRef.current)
-      return;
+    if (!mainRef.current || !imageRef.current || !contentRef.current) return;
 
     const currIdx = projects.findIndex((p) => p.id === id);
     const prevIdx = projects.findIndex((p) => p.id === prevId);
-    const dir = getDirection(currIdx, prevIdx);
-
-    const tl = gsap.timeline();
-    tl.fromTo(
-      mainRef.current,
-      { x: dir * 100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
-    );
+    const direction = getDirection(currIdx, prevIdx);
 
     if (isFirstLoad.current) {
-      gsap.fromTo(
-        contentRef.current.children,
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
-          delay: 0.2,
-        }
+      const tl = gsap.timeline();
+      tl.fromTo(
+        mainRef.current,
+        { x: direction * 100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
       );
-      isFirstLoad.current = false;
-    } else {
       gsap.fromTo(
         contentRef.current.children,
-        { x: dir * 60, opacity: 0 },
+        { x: direction * 60, opacity: 0 },
         {
           x: 0,
           opacity: 1,
           duration: 0.6,
           stagger: 0.1,
-          ease: "power2.out",
-          delay: 0.2,
+          ease: "expo.out",
+          delay: 0.3,
         }
+      );
+      isFirstLoad.current = false;
+    } else {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        imageRef.current,
+        { opacity: 0, scale: 0.95 },
+        { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
+      ).fromTo(
+        contentRef.current.children,
+        { x: direction * 80, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "expo.out" },
+        "<+0.1"
       );
     }
 
-    // Animamos cada tarjeta individualmente con ScrollTrigger
     gsap.utils.toArray(othersContainerRef.current.children).forEach((card) => {
       gsap.fromTo(
         card,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          duration: 0.7,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -110,34 +107,35 @@ export default function ProjectPage() {
   }, [id]);
 
   useEffect(() => {
+    if (!mainRef.current) return;
+
     let startX = null;
+    const container = mainRef.current;
 
     const onTouchStart = (e) => {
-      // evita que el swipe haga scroll de la página
-      e.preventDefault();
+      e.stopPropagation();
       startX = e.touches[0].clientX;
     };
 
     const onTouchEnd = (e) => {
-      e.preventDefault();
+      e.stopPropagation();
       if (startX === null) return;
       const endX = e.changedTouches[0].clientX;
       const dx = endX - startX;
 
       if (Math.abs(dx) > 50) {
-        // navigar usando router.push en vez de window.location
         const targetId = dx < 0 ? nextProject.id : prevProject.id;
         router.push(`/projects/${targetId}`, { scroll: false });
       }
       startX = null;
     };
 
-    window.addEventListener("touchstart", onTouchStart, { passive: false });
-    window.addEventListener("touchend", onTouchEnd, { passive: false });
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchend", onTouchEnd, { passive: true });
 
     return () => {
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchend", onTouchEnd);
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchend", onTouchEnd);
     };
   }, [prevProject.id, nextProject.id]);
 
@@ -145,63 +143,65 @@ export default function ProjectPage() {
     <section className="py-10 pt-20 px-4 max-w-6xl mx-auto text-white relative overflow-hidden max-md:px-0">
       <div
         ref={mainRef}
-        className="relative w-full h-[540px] max-md:h-[400px] max-sm:h-[250px] bg-cover overflow-hidden"
+        className="relative w-full h-[570px] max-md:h-[420px] max-sm:h-[280px] bg-cover overflow-hidden shadow-2xl"
       >
-        {/* Image slider nav */}
         <a
           href={project.linkDemo}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute inset-0 w-[85%] mx-auto max-lg:w-full rounded-xl shadow-lg overflow-hidden max-md:rounded-none"
+          className="absolute inset-0 w-[85%] mx-auto max-lg:w-full rounded-xl overflow-hidden max-md:rounded-none"
         >
           <Image
             src={project.image || "/placeholder.svg"}
             alt={project.title}
+            ref={imageRef}
             layout="fill"
             objectFit="cover"
-            className="w-full"
+            className="transition-transform duration-1000 ease-in-out scale-100 hover:scale-105"
           />
         </a>
         <Link
           href={`/projects/${prevProject.id}`}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 p-2 rounded-full transition max-md:left-1"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full transition"
         >
-          <ArrowLeft className="text-2xl" />
+          <ArrowLeft className="text-xl" />
         </Link>
         <Link
           href={`/projects/${nextProject.id}`}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 p-2 rounded-full transition max-md:right-1"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full transition"
         >
-          <ArrowRight className="text-2xl" />
+          <ArrowRight className="text-xl" />
         </Link>
       </div>
 
-      <div ref={contentRef} className="mx-[82px] mt-8 max-lg:mx-0 max-md:px-2 max-md:mt-4">
-        <h1 className="text-4xl max-sm:text-2xl font-bold">
-          <span className="bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">
+      <div ref={contentRef} className="mx-[82px] mt-8 max-lg:mx-0 max-md:px-2">
+        <h1 className="text-5xl max-sm:text-3xl font-extrabold tracking-tight">
+          <span className="bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">
             {project.title}
           </span>
         </h1>
-        <p className="text-gray-300 mt-4 text-lg max-sm:text-base">
+        <p className="text-gray-300 mt-4 text-xl max-sm:text-base leading-relaxed">
           {project.description}
         </p>
-        <p className="text-gray-400 mt-2 max-sm:text-sm">
+        <p className="text-gray-400 mt-2 text-base max-sm:text-sm leading-6">
           {project.paragraph1}
         </p>
+
         <h3 className="text-2xl max-sm:text-xl font-semibold mt-6">
           <span className="bg-white bg-clip-text text-transparent">
             {language === "es" ? "Tecnologías" : "Technologies"}
           </span>
         </h3>
-        <p className="text-gray-400 mt-2 max-sm:text-sm leading-6">
+        <p className="text-gray-400 mt-2 text-base max-sm:text-sm leading-6">
           {project.technologies}
         </p>
+
         <div className="mt-6 flex gap-4 flex-wrap">
           <Link
             href={project.linkDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-slate-900 rounded-lg text-white font-bold transition-transform hover:scale-105 shadow-lg"
+            className="inline-block px-6 py-3 bg-gradient-to-br from-cyan-600 to-purple-600 rounded-xl text-white font-semibold transition-transform hover:scale-105 shadow-xl"
           >
             Demo
           </Link>
@@ -209,20 +209,21 @@ export default function ProjectPage() {
             href={project.linkRepo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-slate-900 rounded-lg text-white font-bold transition-transform hover:scale-105 shadow-lg"
+            className="inline-block px-6 py-3 bg-gray-900 rounded-xl text-white font-semibold transition-transform hover:scale-105 shadow-xl"
           >
             <FolderGit2 className="inline-block mr-2" />
+            Repo
           </Link>
         </div>
       </div>
 
-      <div className="mx-[82px] mt-8 max-lg:mx-0">
-        <h2 className="text-2xl font-bold mb-6 text-gray-500 max-sm:text-xl max-md:px-2">
+      <div className="mx-[82px] mt-12 max-lg:mx-0">
+        <h2 className="text-2xl font-bold mb-6 text-gray-400 max-sm:text-xl max-md:px-2">
           {language === "es" ? "Otros proyectos" : "Other projects"}
         </h2>
         <div
           ref={othersContainerRef}
-          className="flex overflow-hidden gap-6 pb-4 no-scrollbar snap-x snap-mandatory max-lg:flex-col max-lg:items-center"
+          className="flex overflow-y-hidden overflow-x-auto gap-6 pb-4 no-scrollbar snap-x snap-mandatory max-lg:flex-col max-lg:items-center"
         >
           {otherProjects.map((proj) => (
             <Link
@@ -246,7 +247,7 @@ export default function ProjectPage() {
                       {proj.title}
                     </span>
                   </h3>
-                  <p className="text-sm text-gray-300 mt-2 max-md:mt-0">
+                  <p className="text-sm text-gray-400 mt-2 max-md:mt-1">
                     {proj.description}
                   </p>
                 </div>
